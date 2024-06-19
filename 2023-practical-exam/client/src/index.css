@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0 0%;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+button {
+  background-color: rgb(34, 114, 195) !important;
+}
+
+button:hover {
+  background-color: rgb(24, 99, 173) !important;
+}
+
+.app {
+  display: flex;
+}
+
+.app-content {
+  margin-left: 20% !important;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-content > h2 {
+  margin-top: 5%;
+  text-align: center !important;
+  font-weight: bolder;
+  font-size: 25px;
+  color: rgb(34, 114, 195);
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+  .app-content {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+}
+
+/* tables */
+.table-container {
+  width: 80% !important;
+  margin: 1% 10% 2% !important;
+  overflow-x: auto;
+}
+
+.table {
+  border-collapse: collapse;
+  min-width: 100%;
+  width: max-content;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px 8px !important;
+  font-size: 13px;
+}
+
+.table th.center,
+.table td.center {
+  text-align: center;
+}
+
+.table tr:nth-child(even) {
+  background: rgba(183, 185, 187, 0.08);
+  width: 100%;
+  color: #727272;
+}
+
+.table .space {
+  height: 0.5rem;
+  width: 100%;
+  background-color: #fff;
+}
+
+.table th {
+  background: rgb(232, 240, 248);
+  color: rgb(34, 114, 195);
+}
+
+/* Table Pagination */
+
+.table-pagination {
+  display: flex !important;
+}
+
+.table-pagination .pagination-item {
+  background: #eaeaea !important;
+  border-radius: 50% !important;
+  width: 28px !important;
+  height: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.3rem !important;
+  font-weight: bold !important;
+  color: #868585 !important;
+  cursor: pointer !important;
+}
+
+.table-pagination .pagination-item.active {
+  background: rgb(34, 114, 195) !important;
+  color: #fff !important;
+}
+
+.table-pagination .pagination-item p {
+  font-size: 13px !important;
+}
+
+/* Table Scrollbar */
+.table-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: rgb(34, 114, 195);
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(30, 103, 177);
+}
+
+
+/* MODAL */
+.modal-container {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /* Added property */
+}
+
+/* forms */
+
+.button-link {
+  background: rgb(34, 114, 195);
+  border-radius: 3px;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 15px;
+  width: 15rem;
+  height: 2.4rem;
+}
+
+.form-holder {
+  width: 40%;
+}
+
+.form-holder .form-header {
+  background: rgb(34, 115, 195);
+  border-radius: 20px 20px 0px 0px;
+  padding: 1rem 1rem;
+}
+
+.form-holder .form-content {
+  width: 100%;
+  min-height: 15rem;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.form {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.form .form-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.2% 0%;
+}
+
+.form .form-group {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.form .form-group label {
+  color: #868585;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 14px;
+  transition: 0.2s ease-in-out;
+}
+
+.form .form-group:focus-within label {
+  color: rgb(34, 114, 195);
+}
+
+.form .form-group textarea:focus {
+  border: 2px solid rgb(34, 114, 195);
+}
+
+.form button[type="submit"] {
+  background: rgb(34, 114, 195);
+  border-radius: 8px;
+  padding: 0.5rem 0rem !important;
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+  margin: 0.7rem 0 !important;
+  width: 100% !important;
+}
+
+.form button[type="submit"]:disabled {
+  background-color: #b7b7b7;
+}
+
+label {
+  color: #868585;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 14px;
+  transition: 0.2s ease-in-out;
+}
+
+.error-message{
+  color: rgb(192, 18, 18);
+  font-size: 13px;
+}
+
+@media screen and (max-width: 992px) {
+  .table-container {
+    width: 100% !important;
+    padding: 0% 2% !important;
+    margin: 3% 1% !important;
+  }
+
+  .table {
+    width: max-content;
+    min-width: 100%;
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .app-content {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+
+  .form-holder {
+    width: 90%;
+  }
+}
