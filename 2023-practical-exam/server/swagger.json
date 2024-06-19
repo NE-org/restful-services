@@ -1,0 +1,271 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "A system that helps RTB to track the distribution of equipments to employees \n\nMade with ❤️ by Nkubito Pacis",
+        "title": "Equipment Distribution System",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "Nkubito Pacis",
+            "email": "pacisnkubito@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "tags": [{
+            "name": "USER OPERATIONS",
+            "description": "Operations on users"
+        },
+        {
+            "name": "EMPLOYEE-LAPTOP OPERATIONS",
+            "description": "Operations on employees laptops"
+        }
+    ],
+    "security": [{
+        "Bearer": []
+    }],
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "auth-token",
+            "in": "header",
+            "bearerFormat": "JWT",
+            "scheme": "bearer"
+        }
+    },
+    "paths": {
+        "/users/login": {
+            "post": {
+                "tags": [
+                    "USER OPERATIONS"
+                ],
+                "summary": "Login",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "type": "object",
+                    "consumes": "application/json",
+                    "properties": {
+                        "email": {
+                            "type": "string",
+                            "required": "true"
+                        },
+                        "password": {
+                            "type": "string",
+                            "required": "true"
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Invalid data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/users/admin/register": {
+            "post": {
+                "tags": [
+                    "USER OPERATIONS"
+                ],
+                "summary": "Login",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "type": "object",
+                    "consumes": "application/json",
+                    "properties": {
+                        "email": {
+                            "type": "string",
+                            "required": "true"
+                        },
+                        "password": {
+                            "type": "string",
+                            "required": "true"
+                        },
+                        "names": {
+                            "type": "string",
+                            "required": "true"
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Invalid data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/users/profile": {
+            "get": {
+                "tags": [
+                    "USER OPERATIONS"
+                ],
+                "summary": "Get user profile",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Invalid data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/employee-laptops": {
+            "get": {
+                "tags": [
+                    "EMPLOYEE-LAPTOP OPERATIONS"
+                ],
+                "summary": "Get Employees Laptops",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "query",
+                        "name": "page",
+                        "type": "number"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Invalid data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/employee-laptops/register": {
+            "post": {
+                "tags": [
+                    "EMPLOYEE-LAPTOP OPERATIONS"
+                ],
+                "summary": "Register employee laptop",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "type": "object",
+                    "consumes": "application/json",
+                    "properties": {
+                        "firstname": {
+                            "type": "string",
+                            "required": "true"
+                        },
+                        "lastname": {
+                            "type": "string",
+                            "required": "true"
+                        },
+                        "nationalId": {
+                            "type": "number",
+                            "required": "true"
+                        },
+                        "phoneNumber": {
+                            "type": "string",
+                            "required": "true"
+                        },
+                        "email": {
+                            "type": "string",
+                            "required": "true"
+                        },
+                        "department": {
+                            "type": "string",
+                            "required": "true"
+                        },
+                        "position": {
+                            "type": "string",
+                            "required": "true"
+                        },
+                        "laptopManufacturer": {
+                            "type": "string",
+                            "required": "true"
+                        },
+                        "model": {
+                            "type": "string",
+                            "required": "true"
+                        },
+                        "serialNumber": {
+                            "type": "string",
+                            "required": "true"
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Invalid data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        }
+    }
+}
